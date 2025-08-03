@@ -1,5 +1,6 @@
 import { verifyToken } from '../utils/jwt.js';
 
+//jwt token generator
 export default function (req, res, next) {
   const header = req.headers.authorization?.split(' ')[1];
   if (!header) return res.status(401).json({ msg: 'No token' });

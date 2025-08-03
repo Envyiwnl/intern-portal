@@ -8,13 +8,17 @@ import internRouter from "./routes/intern.js";
 import authRouter from "./routes/auth.js";
 import auth from "./middleware/auth.js";
 
-
 const app = express();
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true,                 
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://intern-portal-ten.vercel.app/login",
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
